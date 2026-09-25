@@ -1,3 +1,18 @@
-pycache/
+# Python cache
+__pycache__/
 *.py[cod]
-*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
