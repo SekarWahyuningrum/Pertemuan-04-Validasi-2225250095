@@ -1,13 +1,22 @@
-if a <= 0 or b <= 0 or c <= 0:
-    print("Masukan ditolak: setiap sudut harus lebih dari 0 derajat.")
-elif abs(a + b + c - 180) > 1e-9:
-    print("Masukan ditolak: jumlah ketiga sudut harus 180 derajat.")
-else:
-    terbesar = max(a, b, c)
+print("Validasi dan Klasifikasi Nilai Akhir")
 
-    if terbesar > 90:
-        print("Segitiga tumpul")
-    elif abs(terbesar - 90) < 1e-9:
-        print("Segitiga siku-siku")
+teks_ujian = input("Nilai ujian (0-100): ").strip()
+teks_tugas = input("Nilai tugas (0-100): ").strip()
+teks_hadir = input("Kehadiran persen (0-100): ").strip()
+
+try:
+    ujian = float(teks_ujian)
+    tugas = float(teks_tugas)
+    hadir = float(teks_hadir)
+except ValueError:
+    print("Masukan ditolak: seluruh data harus berupa angka.")
+else:
+    if not (0 <= ujian <= 100):
+        print("Masukan ditolak: nilai ujian di luar rentang 0 sampai 100.")
+    elif not (0 <= tugas <= 100):
+        print("Masukan ditolak: nilai tugas di luar rentang 0 sampai 100.")
+    elif not (0 <= hadir <= 100):
+        print("Masukan ditolak: kehadiran di luar rentang 0 sampai 100.")
     else:
-        print("Segitiga lancip")
+        akhir = 0.6 * ujian + 0.4 * tugas
+        print(f"Nilai akhir = {akhir:.2f}")
